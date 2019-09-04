@@ -1,0 +1,109 @@
+body {
+    margin: 0;
+    font-family: Arial, Helvetica, sans-serif;
+  }
+
+
+
+  .topnav a {
+    float: left;
+    color: #333333;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+  }
+
+  .topnav a:hover {
+    background-color: #d9d9d9;
+    color: black;
+  }
+
+  .topnav a.active {
+    background-color: #0066cc;
+    color: white;
+  }
+
+  .topnav{
+        margin-top: 60px;
+        margin-left: 30px;
+        margin-right: 30px;
+        margin-bottom: 10px;
+        overflow: hidden;
+        background-color: #f2f2f2;
+  }
+  
+  
+  .horizontal{
+      border: 1px solid #0066cc; 
+      margin-left:30px; 
+      margin-right:30px;
+  }
+  #message{
+      margin-left: 30px;
+      margin-right: 30px;
+      font-family: Arial, Helvetica, sans-serif;
+  }
+  
+  form {
+    margin-left: 60px;
+    margin-right: 60px;
+  }
+  
+  /* Full-width inputs */
+  input[type=text], input[type=password] {
+    width: 100%;
+    padding: 12px 20px;
+    margin: 8px 0;
+    display: inline-block;
+    border: 1px solid #ccc;
+    box-sizing: border-box;
+  }
+  /* Add a background color when the inputs get focus */
+  input[type=text]:focus, input[type=password]:focus {
+    background-color: #ddd;
+    outline: none;
+  }
+  
+  /* Set a style for all buttons */
+  button {
+    background-color: #0066cc;
+    color: white;
+    padding: 14px 20px;
+    margin: 8px 0;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    opacity: 0.9;
+  }
+  
+  button:hover {
+    opacity:0.8;
+  }
+  
+  label{
+      font-size: 15px;
+  }
+  
+  .first{
+      height:20px;
+      width:47%;
+      float:left;
+      
+  }
+      
+  .second{
+      height:20px;
+      width:47%;
+      float:right;
+  }
+
+  #selection{
+    height:40px; 
+    width:100%;
+  }
+  
+  #save{
+      float:left;
+      width: 50%;
+  }

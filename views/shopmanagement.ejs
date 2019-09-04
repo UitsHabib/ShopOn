@@ -1,0 +1,186 @@
+<% include partials/headersell.ejs %> 
+
+        <div class='container'>
+            <div class="topnav">
+                    <% if(title=="basic information") { %>
+                        <a class="active" href="/management">Shop Details</a>
+                        <a href="/location">Shop Location</a>
+                        <a href="/hotline">Shop Hotline</a>
+                        <a href="/billing">Shop Billing</a>
+                        <a href="/addProducts">Add Products</a>
+                        <a href="/showProducts">Show Products</a>
+                    <% } %>
+                    <% if(title=="shop location") { %>
+                        <a href="/management">Shop Details</a>
+                        <a class="active" href="/location">Shop Location</a>
+                        <a href="/hotline">Shop Hotline</a>
+                        <a href="/billing">Shop Billing</a>
+                        <a href="/addProducts">Add Products</a>
+                        <a href="/showProducts">Show Products</a>
+                    <% } %>
+                    <% if(title=="shop hotline"){ %>
+                        <a href="/management">Shop Details</a>
+                        <a href="/location">Shop Location</a>
+                        <a  class="active" href="/hotline">Shop Hotline</a>
+                        <a href="/billing">Shop Billing</a>
+                        <a href="addProducts">Add Products</a>
+                        <a href="showProducts">Show Products</a>
+                    <% } %>
+                    <% if(title=="shop billing") { %>
+                        <a href="/management">Shop Details</a>
+                        <a href="/location">Shop Location</a>
+                        <a href="/hotline">Shop Hotline</a>
+                        <a  class="active" href="/billing">Shop Billing</a>
+                        <a href="/addProducts">Add Products</a>
+                        <a href="/showProducts">Show Products</a>
+                    <% } %>
+                    <% if(title=="add products") { %>
+                        <a href="/management">Shop Details</a>
+                        <a href="/location">Shop Location</a>
+                        <a href="/hotline">Shop Hotline</a>
+                        <a href="/billing">Shop Billing</a>
+                        <a  class="active" href="/addProducts">Add Products</a>
+                        <a href="/showProducts">Show Products</a>
+                    <% } %>
+                    <% if(title=="show products") { %>
+                        <a href="/management">Shop Details</a>
+                        <a href="/location">Shop Location</a>
+                        <a href="/hotline">Shop Hotline</a>
+                        <a href="/billing">Shop Billing</a>
+                        <a href="/addProducts">Add Products</a>
+                        <a  class="active" href="showProducts">Show Products</a>
+                    <% } %>
+            </div>
+           
+            <div>
+                <hr class="horizontal" >
+                <div id='message'>
+                    <p> Message : </p>
+                </div>
+                <hr class="horizontal">
+            </div>
+
+            <% if(title == "basic information"){ %>
+                <div id='message' style="font-size:25px;">
+                    <p> Shop Information </p>
+                </div>
+                
+                
+                <form action='' method='post'> 
+                    
+                        <div class='first'> 						
+                            
+                            <label for='shopname'> Shop/Business name </label> </br>
+                            <input type='text' name='shopname' value = "<%= info.businessname %>"  > </br>
+                    
+                            <label for='email'> Email </label> </br>
+                            <% console.log(info.businessname) %>
+                            <input type='text' name='email' value = "<%= info.email %>" > </br>
+                            
+                            <label for='Phone'> Phone </label> </br>
+                            <input type='text' name='phone' value = "<%= info.phone %>" > </br>
+                        </div>
+                        
+                        <div class='second'>
+                            <label for='pass'> Password </label> </br>
+                            <input type='text' name='pass' value = "<%= info.password %>" > </br>
+                            
+                            <label for='website'> Website Link </label> </br>
+                            <input type='text' name='website' value = "<%= info.website %>" > </br>
+                            
+                            <label for='facebook'> Facebook Page Link </label> </br>
+                            <input type='text' name='facebook' value = "<%= info.facebookpage %>" > </br>
+                            
+                        <div>
+    
+                        <div id='save'> 
+                            <button type='submit' style="color:white;"> Save </button>
+                        </div>
+                    
+                </form>
+            <% } %>
+            
+            <% if(title=="shop hotline") { %>
+                <div id='message' style="font-size:25px;">
+                    <p> Shop Phone Numbers </p>
+                </div>
+                
+                
+                <form action='' method='post'> 
+                    
+                        <div class='first'> 
+                            <label for='phone1'> Phone Number 1 </label> </br>
+                            <input type='text' name='phone1' value = "<%= info.phone1 %>" > </br>
+                            
+                            <label for='phone2'> Phone Number 2 </label> </br>
+                            <input type='text' name='phone2' value = "<%= info.phone2 %>" > </br>
+                            
+                        </div>
+                        
+                        <div class='second'>
+                            <label for='phone3'> Phone Number 3 </label> </br>
+                            <input type='text' name='phone3' value = "<%= info.phone3 %>" > </br>
+                            
+                            <label for='phone4'> Phone Number 4 </label> </br>
+                            <input type='text' name='phone4' value = "<%= info.phone4 %>" > </br>
+                        <div>
+                        
+                        <div id='save'> 
+                            <button type='submit' style="color:white;"> Save </button>
+                        </div>
+                    
+                </form>
+            <% } %>
+
+            <% if(title=="add products") { %>
+                
+                <div id='message' style="font-size:25px;">
+                    <p> Add Products </p>
+                </div>
+                    
+                <form action='/addProducts' method='post' encType="multipart/form-data"> 
+                    <div class='first'> 
+                        
+                        <label for='categorie_name'> Select Categorie </label> </br>
+                        <div class="dropdown" >
+                            <select class="mdb-select md-form" searchable="Search here.." style="height:40px;" name="select">
+                                <option value="" disabled selected>Select Categorie</option>
+                                <% categorie.forEach(function(info){ %>
+                                    <option value="<%=info.categorie_name%>"> <%= info.categorie_name %>"</option>
+                                <% }); %>
+                            </select>
+                        </div> </br>
+                        
+                        <label for='title'> Title </label> </br>
+                        <input type='text' name='title'> </br>
+                        
+                        <label for='brand'> Brand </label> </br>
+                        <input type='text' name='brand'> </br>
+                        
+                        
+                        <label for='img'> Select Image </label> </br>
+                        <input type='file' name='upload_img'> </br>
+                        
+                    </div>
+                    
+                    <div class='second'>
+                        <label for='phone3'> New Price </label> </br>
+                        <input type='text' name='nprice'> </br>
+                        
+                        <label for='phone4'> Old Price </label> </br>
+                        <input type='text' name='oprice'> </br>
+                        
+                        <label for='quantity'> Quantity </label> </br>
+                        <input type='text' name='quantity'> </br>
+                        
+                        <label for='details'> Details </label> </br>
+                        <input type='text' name='details' style="height:100px;"> </br>
+                    <div>
+                    
+                    <div id='save'> 
+                        <button type='submit' style="color:white;"> Save </button>
+                    </div>
+                    
+                </form>
+            <% } %>
+        </div>

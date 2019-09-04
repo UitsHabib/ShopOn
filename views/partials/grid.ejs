@@ -1,0 +1,23 @@
+                                            <div class="col-sm-3">
+                                            <div class="thumb-wrapper">
+                                                <span class="wish-icon"><i class="fa fa-heart-o"></i></span>
+                                                <div class="img-box">
+                                                    <!-- <img src="data:image/jpeg;base64, <%= new Buffer(product.image).toString('base64')%>"  class="img-responsive img-fluid" alt=""> -->	<!-- product image -->				
+                                                    <img src="assets/images/upload_images/<%= product.image %>"  class="img-responsive img-fluid" alt="">
+                                                </div>
+                                                <div class="thumb-content">
+                                                    <h4><%= product.title %></h4>													<!-- product name -->
+                                                    <div class="star-rating">
+                                                        <ul class="list-inline">
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa  fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star"></i></li>
+                                                            <li class="list-inline-item"><i class="fa fa-star-o"></i></li>
+                                                        </ul>
+                                                    </div>
+                                                    <p class="item-price"><strike><%= product.old_price %></strike> <b><%= product.new_price %></b></p> <!-- price -->
+                                                    <a href="cart.html" class="btn btn-primary">Add to Cart</a>
+                                                </div>						
+                                            </div>
+                                            </div>
